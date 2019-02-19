@@ -1,7 +1,15 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from 'next/link';
+import Router from 'next/router';
 import Head from '../components/head'
 import Nav from '../components/nav'
+
+const handleClick = () => {
+  Router.push({
+    pathname: '/number',
+    query: { name: 'Panupong' }
+  });
+}
 
 const Home = () => (
   <div>
@@ -13,7 +21,7 @@ const Home = () => (
       <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
       </p>
-
+      <button onClick={handleClick}>GO TO number</button>
       <div className="row">
         <Link href="https://github.com/zeit/next.js#getting-started">
           <a className="card">
